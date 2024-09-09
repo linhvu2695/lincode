@@ -134,15 +134,17 @@ function RmbgPage() {
                     {/* Convert arrow */}
                     <Flex alignItems="center" px={4}>
                         <Tooltip
-                            label={
-                                imageSrc == null
-                                    ? "Upload an image first"
-                                    : "Convert"
-                            }
+                            // label={
+                            //     imageSrc == null
+                            //         ? "Upload an image first"
+                            //         : "Convert"
+                            // }
+                            label={"This feature is currently unavailable"}
                         >
                             <IconButton
                                 icon={<IoArrowForward />}
-                                isDisabled={imageSrc == null}
+                                // isDisabled={imageSrc == null}
+                                isDisabled={true}
                                 onClick={handleConvert}
                                 isLoading={isLoading}
                             />

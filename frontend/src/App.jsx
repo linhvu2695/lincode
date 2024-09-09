@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import Navbar from "./components/Common/Navbar";
 import Homepage from "./pages/Homepage";
 import RmbgPage from "./pages/Feature/RmbgPage";
+import ProfilePage from "./pages/ProfilePage";
 
 export const BASE_URL =
     import.meta.env.MODE === "development"
@@ -11,12 +12,13 @@ export const BASE_URL =
 
 function App() {
     return (
-        <Stack minH={"100vh"} px={10}>
+        <Stack minH={"100vh"} px={10} pb={10}>
             <BrowserRouter>
                 <Navbar></Navbar>
                 <Routes>
                     <Route path="/" element={<Homepage />} />
                     <Route path="/feature/rmbg" element={<RmbgPage />} />
+                    <Route path="/profile" element={<ProfilePage />} />
                 </Routes>
             </BrowserRouter>
         </Stack>
