@@ -4,6 +4,8 @@ import Navbar from "./components/Common/Navbar";
 import Homepage from "./pages/Homepage";
 import RmbgPage from "./pages/Feature/RmbgPage";
 import ProfilePage from "./pages/ProfilePage";
+import CountriesPage from "./pages/Countries/CountriesPage";
+import FlagQuizPage from "./pages/Countries/FlagQuizPage";
 
 export const BASE_URL =
     import.meta.env.MODE === "development"
@@ -19,6 +21,8 @@ function App() {
                     <Route path="/" element={<Homepage />} />
                     <Route path="/feature/rmbg" element={<RmbgPage />} />
                     <Route path="/profile" element={<ProfilePage />} />
+                    <Route path="/countries" element={<CountriesPage />} />
+                    <Route path="/countries/flagQuiz" element={<FlagQuizPage />} />
                 </Routes>
             </BrowserRouter>
         </Stack>

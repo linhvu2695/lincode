@@ -6,9 +6,10 @@ import os
 
 def register_endpoints(app: Flask):
     from services.Quality.QualityController import quality
+    from services.Countries.CountriesController import countries
     from services.AI.AIController import ai
 
-    for blueprint in [quality, ai]:
+    for blueprint in [quality, countries, ai]:
         app.register_blueprint(blueprint=blueprint, url_prefix="/")
 
 app = Flask(__name__)

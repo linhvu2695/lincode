@@ -1,5 +1,12 @@
 export const FEATURES = [
     {
+        name: "Country Quiz",
+        title: "Country Quiz",
+        description: "Challenge yourself on the knowledge of countries around the world!",
+        img_url: "/countries.jpg",
+        page_url: "/countries"
+    },
+    {
         name: "Remove Background",
         title: "Remove Background",
         description:

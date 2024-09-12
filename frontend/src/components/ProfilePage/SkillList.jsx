@@ -39,6 +39,11 @@ function SkillList() {
                     <Text fontWeight={"bold"}>Development</Text>
                 </Flex>
                 <Flex gap={2} flexWrap="wrap">
+                <SkillCard
+                        skill={"Database"}
+                        description={["SQL", "MongoDB"]}
+                        isHighlight={true}
+                    />
                     <SkillCard
                         skill={"SearchEngine"}
                         description={["ElasticSearch"]}

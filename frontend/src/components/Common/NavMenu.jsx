@@ -21,8 +21,9 @@ function NavMenu() {
                 variant="outline"
             />
             <MenuList title="Features">
-                {FEATURES.map((feature) => (
+                {FEATURES.map((feature, index) => (
                     <MenuItem
+                        key={index}
                         icon={<IoCutOutline />}
                         onClick={() => navigate(feature.page_url)}
                     >
