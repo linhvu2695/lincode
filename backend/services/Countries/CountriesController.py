@@ -19,3 +19,16 @@ def guess_flag():
         return jsonify({"error": str(err)}), 400
     except Exception as err:
         return jsonify({"error": str(err)}), 500
+    
+@countries.route("/api/Countries/guessCapital", methods=["GET"])
+def guess_capital():
+    """
+    Get data for a random capital guessing question
+    """
+    try:
+        result = CountriesService().generate_guess_capital()
+        return jsonify({"success": True, "result": result}), 200
+    except ValueError as err:
+        return jsonify({"error": str(err)}), 400
+    except Exception as err:
+        return jsonify({"error": str(err)}), 500

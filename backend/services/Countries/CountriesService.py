@@ -31,4 +31,18 @@ class CountriesService:
             "answer": selected_country["name"],
             "options": options
         }
+    
+    def generate_guess_capital(self) -> Dict[str, str]:
+        selected_country = random.choice(self.repo)
+        other_countries = [country['name'] 
+                           for country in self.repo 
+                           if country['name'] != selected_country["name"]]
+        options = random.sample(other_countries, 3) + [selected_country["name"]]
+        random.shuffle(options)
+
+        return {
+            "capital": selected_country["capital"],
+            "answer": selected_country["name"],
+            "options": options
+        }
 
