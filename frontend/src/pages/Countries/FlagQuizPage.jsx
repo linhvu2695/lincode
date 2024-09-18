@@ -7,6 +7,7 @@ import {
     Image,
     Grid,
     Button,
+    useColorMode,
 } from "@chakra-ui/react";
 import { BASE_URL } from "../../App";
 
@@ -14,6 +15,7 @@ function FlagQuizPage() {
     const [quiz, setQuiz] = useState(null);
     const [answer, setAnswer] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const { colorMode } = useColorMode();
 
     const getFlagQuiz = async () => {
         try {
@@ -62,7 +64,7 @@ function FlagQuizPage() {
                             objectFit="contain"
                             borderRadius="md"
                             borderWidth="2px"
-                            borderColor="white"
+                            borderColor={colorMode == "dark" ? "white" : "gray"}
                             borderStyle="solid"
                             mx="auto"
                         />

@@ -7,6 +7,7 @@ import ProfilePage from "./pages/ProfilePage";
 import CountriesPage from "./pages/Countries/CountriesPage";
 import FlagQuizPage from "./pages/Countries/FlagQuizPage";
 import CapitalQuizPage from "./pages/Countries/CapitalQuizPage";
+import CryptoPage from "./pages/Crypto/CryptoPage";
 
 export const BASE_URL =
     import.meta.env.MODE === "development"
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/countries" element={<CountriesPage />} />
                     <Route path="/countries/flagQuiz" element={<FlagQuizPage />} />
                     <Route path="/countries/capitalQuiz" element={<CapitalQuizPage />} />
+                    <Route path="/crypto" element={<CryptoPage />} />
                 </Routes>
             </BrowserRouter>
         </Stack>

@@ -8,8 +8,9 @@ def register_endpoints(app: Flask):
     from services.Quality.QualityController import quality
     from services.Countries.CountriesController import countries
     from services.AI.AIController import ai
+    from services.Crypto.CryptoController import crypto
 
-    for blueprint in [quality, countries, ai]:
+    for blueprint in [quality, countries, ai, crypto]:
         app.register_blueprint(blueprint=blueprint, url_prefix="/")
 
 app = Flask(__name__)

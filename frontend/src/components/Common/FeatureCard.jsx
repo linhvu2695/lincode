@@ -1,13 +1,4 @@
-import {
-    Card,
-    CardBody,
-    CardFooter,
-    Heading,
-    Image,
-    Stack,
-    Text,
-    Button,
-} from "@chakra-ui/react";
+import { Card, CardBody, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 const FeatureCard = ({ feature }) => {
@@ -17,6 +8,9 @@ const FeatureCard = ({ feature }) => {
             direction={{ base: "column", sm: "row" }}
             overflow="hidden"
             variant="outline"
+            _hover={{ boxShadow: "0px 0px 8px teal", borderColor: "teal.500" }}
+            cursor={"pointer"}
+            onClick={() => navigate(feature.page_url)}
         >
             <Image
                 objectFit="cover"
@@ -31,16 +25,6 @@ const FeatureCard = ({ feature }) => {
 
                     <Text py="2">{feature.description}</Text>
                 </CardBody>
-
-                <CardFooter>
-                    <Button
-                        onClick={() => navigate(feature.page_url)}
-                        variant="solid"
-                        colorScheme="blue"
-                    >
-                        Try out
-                    </Button>
-                </CardFooter>
             </Stack>
         </Card>
     );
