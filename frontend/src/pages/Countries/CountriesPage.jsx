@@ -1,6 +1,6 @@
 import { Card, Grid, Heading, Stack, Text } from "@chakra-ui/react";
 import React from "react";
-import { IoFlag } from "react-icons/io5";
+import { IoFlag, IoStar } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { GiCapitol } from 'react-icons/gi';
 
@@ -18,6 +18,11 @@ function CountriesPage() {
                     icon={<GiCapitol size={"5rem"} />}
                     title={"Capital Quiz"}
                     page_url={"/capitalQuiz"}
+                />
+                <CountriesOption
+                    icon={<IoStar size={"5rem"} />}
+                    title={"Countries List"}
+                    page_url={"/info"}
                 />
             </Grid>
         </Stack>

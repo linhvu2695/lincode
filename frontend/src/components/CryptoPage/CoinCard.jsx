@@ -38,7 +38,11 @@ function CoinCard({ info }) {
                     alignItems={"center"}
                 >
                     <Text fontWeight={"bold"} fontSize={"1.5rem"}>
-                        ${info.current_price.toLocaleString()}
+                        $
+                        {info.current_price.toLocaleString(undefined, {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 8,
+                        })}
                     </Text>
                     <Text
                         fontWeight={"bold"}

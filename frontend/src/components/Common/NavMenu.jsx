@@ -6,9 +6,15 @@ import {
     MenuItem,
     IconButton,
 } from "@chakra-ui/react";
-import { IoMenu, IoCutOutline } from "react-icons/io5";
+import { IoCutOutline, IoFlag, IoLogoBitcoin, IoMenu } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { FEATURES } from "../../data/Features";
+
+const FEATURE_ICON_MAP = {
+    "Crypto": <IoLogoBitcoin/>,
+    "Country": <IoFlag/>,
+    "RemoveBackground": <IoCutOutline/>
+};
 
 function NavMenu() {
     const navigate = useNavigate();
@@ -24,7 +30,7 @@ function NavMenu() {
                 {FEATURES.map((feature, index) => (
                     <MenuItem
                         key={index}
-                        icon={<IoCutOutline />}
+                        icon={FEATURE_ICON_MAP[feature.name]}
                         onClick={() => navigate(feature.page_url)}
                     >
                         {feature.name}

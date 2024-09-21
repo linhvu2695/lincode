@@ -23,9 +23,9 @@ function FlagQuizPage() {
             const data = await response.json();
 
             if (!response.ok) {
+                console.log(data);
                 throw new Error(data.error);
             }
-            console.log(data);
             setQuiz(data.result);
         } catch (error) {
             console.error(error);

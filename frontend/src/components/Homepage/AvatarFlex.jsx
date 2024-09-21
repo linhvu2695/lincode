@@ -1,6 +1,6 @@
-import { Avatar, Flex, IconButton, Tooltip } from "@chakra-ui/react";
+import { Avatar, Flex, IconButton, Text, Tooltip } from "@chakra-ui/react";
 import React from "react";
-import { IoDocumentText, IoLogoGithub, IoLogoLinkedin, IoLogoWordpress } from "react-icons/io5";
+import { IoLogoGithub, IoLogoLinkedin, IoLogoWordpress } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
 function AvatarFlex() {
@@ -13,6 +13,10 @@ function AvatarFlex() {
                     boxSize={"16rem"}
                     borderWidth="4px"
                     borderColor="white"
+                    _hover={{
+                        boxShadow: "0px 0px 8px teal",
+                        borderColor: "teal.500",
+                    }}
                     onClick={() => navigate("/profile")}
                     cursor="pointer"
                 ></Avatar>
@@ -33,6 +37,11 @@ function AvatarFlex() {
                     icon={<IoLogoWordpress />}
                 />
             </Flex>
+
+            <Text fontWeight={"bold"}>Hi there, call me Linh! 👋</Text>
+            <Text>
+                I'm a Software Developer, a soccer player and a casual singer🎶!
+            </Text>
         </Flex>
     );
 }

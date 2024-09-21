@@ -16,7 +16,7 @@ function SkillList() {
                 <Flex gap={2} flexWrap="wrap">
                     <SkillCard
                         skill={"Python"}
-                        description={["Tensorflow/Pytorch", "Flask"]}
+                        description={["tensorflow / pytorch", "numpy / pandas", "flask"]}
                         isHighlight={true}
                     />
                     <SkillCard
@@ -51,14 +51,18 @@ function SkillList() {
                     />
                     <SkillCard skill={"Caching"} description={["Redis"]} />
                     <SkillCard
-                        skill={"Message Queues"}
+                        skill={"Async Queues"}
                         description={["RabbitMQ"]}
                     />
                     <SkillCard
                         skill={"Versioning"}
-                        description={["Github", "Gitlab/Azure"]}
+                        description={["Github", "Gitlab"]}
                     />
                     <SkillCard skill={"Docker"} />
+                    <SkillCard
+                        skill={"Monitoring"}
+                        description={["Grafana", "Prometheus"]}
+                    />
                 </Flex>
             </Flex>
         </Flex>

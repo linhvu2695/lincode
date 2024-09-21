@@ -23,8 +23,8 @@ function CapitalQuizPage() {
 
             if (!response.ok) {
                 throw new Error(data.error);
+                console.log(data);
             }
-            console.log(data);
             setQuiz(data.result);
         } catch (error) {
             console.error(error);

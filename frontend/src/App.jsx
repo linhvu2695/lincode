@@ -8,6 +8,7 @@ import CountriesPage from "./pages/Countries/CountriesPage";
 import FlagQuizPage from "./pages/Countries/FlagQuizPage";
 import CapitalQuizPage from "./pages/Countries/CapitalQuizPage";
 import CryptoPage from "./pages/Crypto/CryptoPage";
+import CountriesInfoPage from "./pages/Countries/CountriesInfoPage";
 
 export const BASE_URL =
     import.meta.env.MODE === "development"
@@ -26,6 +27,7 @@ function App() {
                     <Route path="/countries" element={<CountriesPage />} />
                     <Route path="/countries/flagQuiz" element={<FlagQuizPage />} />
                     <Route path="/countries/capitalQuiz" element={<CapitalQuizPage />} />
+                    <Route path="/countries/info" element={<CountriesInfoPage />} />
                     <Route path="/crypto" element={<CryptoPage />} />
                 </Routes>
             </BrowserRouter>

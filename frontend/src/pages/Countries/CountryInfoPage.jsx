@@ -1,46 +1,20 @@
-import { Flex, Grid, Heading, Spinner, Stack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import CoinCard from "../../components/CryptoPage/CoinCard";
 import { BASE_URL } from "../../App";
 
-const CRYPTOS = [
-    "bitcoin",
-    "ethereum",
-    "binancecoin",
-    "tether",
-    "ripple",
-    "cardano",
-    "solana",
-    "dogecoin",
-    "matic-network",
-    "usd-coin",
-    "polkadot",
-    "avalanche-2",
-    "litecoin",
-    "chainlink",
-    "shiba-inu",
-    "uniswap",
-    "stellar",
-    "bitcoin-cash",
-    "vechain",
-    "filecoin",
-];
-
-function CryptoPage() {
+function CountryInfoPage() {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
-    const getCryptoData = async () => {
+    const getCountryData = async () => {
         try {
-            const response = await fetch(
-                BASE_URL + "/Crypto/data?ids=" + CRYPTOS.join(",")
-            );
+            const response = await fetch(BASE_URL + `/Countries/${country}`);
             const data = await response.json();
 
             if (!response.ok) {
                 console.log(data);
                 throw new Error(data.error);
             }
+            console.log(data);
             setData(data.result);
         } catch (error) {
             console.error(error);
@@ -50,12 +24,12 @@ function CryptoPage() {
     };
 
     useEffect(() => {
-        getCryptoData();
+        getCountryData();
     }, []);
 
     return (
         <Stack spacing={8} direction="column">
-            <Heading>Cryptocurrency</Heading>
+            <Heading>Countries List</Heading>
             {isLoading && (
                 <Flex
                     width={"100%"}
@@ -66,9 +40,13 @@ function CryptoPage() {
                 </Flex>
             )}
             {!isLoading && data != null && (
-                <Grid templateColumns="repeat(4, 1fr)" gap={6}>
-                    {data.map((crypto) => (
-                        <CoinCard key={crypto.id} info={crypto} />
+                <Grid templateColumns="repeat(6, 1fr)" gap={6}>
+                    {data.map((country) => (
+                        <CountryBall
+                            key={country.id}
+                            name={country.name}
+                            flagUrl={country.flagUrl}
+                        />
                     ))}
                 </Grid>
             )}
@@ -76,4 +54,4 @@ function CryptoPage() {
     );
 }
 
-export default CryptoPage;
+export default CountryInfoPage;
