@@ -6,15 +6,18 @@ function CountryInfo({ info }) {
     return (
         <Flex gap={20} alignItems={"flex-start"}>
             <InfoList info={info} />
-            <Image
-                src={info.href.flag}
-                objectFit="contain"
-                boxShadow="md"
-                borderRadius={"md"}
-                borderWidth={2}
-                borderStyle="solid"
-                borderColor={{ base: "transparent", dark: "white" }}
-            />
+            <Flex direction="column" alignItems="center">
+                <Image
+                    src={info.href.flag}
+                    objectFit="contain"
+                    FlexShadow="md"
+                    borderRadius={"md"}
+                    borderWidth={2}
+                    borderStyle="solid"
+                    borderColor={{ base: "transparent", dark: "white" }}
+                />
+                <Text textAlign="center">{info.full_name}</Text>
+            </Flex>
         </Flex>
     );
 }
