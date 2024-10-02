@@ -25,7 +25,6 @@ class ObjectDetectionService:
             self.lcd_digits_model = YOLO(LCD_DIGITS_CHECKPOINT_PATH)
 
         results = self.lcd_digits_model(img_np)[0]
-        print(results.boxes)
         boxes = []
         for box in results.boxes:
             xyxy = box.xyxy.cpu().numpy()[0]
