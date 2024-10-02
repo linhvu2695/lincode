@@ -1,5 +1,4 @@
-from app import app, db
-from flask import request, jsonify, Blueprint
+from flask import jsonify, Blueprint
 
 quality = Blueprint("quality", __name__)
 

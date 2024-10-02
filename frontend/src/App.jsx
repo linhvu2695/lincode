@@ -9,6 +9,7 @@ import FlagQuizPage from "./pages/Countries/FlagQuizPage";
 import CapitalQuizPage from "./pages/Countries/CapitalQuizPage";
 import CryptoPage from "./pages/Crypto/CryptoPage";
 import CountriesInfoPage from "./pages/Countries/CountriesInfoPage";
+import HeartTrackPage from "./pages/Feature/HeartTrackPage";
 
 export const BASE_URL =
     import.meta.env.MODE === "development"
@@ -23,6 +24,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Homepage />} />
                     <Route path="/feature/rmbg" element={<RmbgPage />} />
+                    <Route path="/heartTrack" element={<HeartTrackPage />} />
                     <Route path="/profile" element={<ProfilePage />} />
                     <Route path="/countries" element={<CountriesPage />} />
                     <Route path="/countries/flagQuiz" element={<FlagQuizPage />} />

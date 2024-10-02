@@ -1,10 +1,17 @@
 export const FEATURES = [
     {
+        name: "HeartTrack",
+        title: "HeartTrack application",
+        description: "Tracking heart metrics application",
+        img_url: "/hearttrack.avif",
+        page_url: "/heartTrack"
+    },
+    {
         name: "Crypto",
         title: "Cryptocurrency dashboard",
         description: "Dashboard to observe current cryptocurrency market. Still under construction.",
         img_url: "/crypto.webp",
-        // page_url: "/crypto"
+        page_url: "/crypto"
     },
     {
         name: "Country",
